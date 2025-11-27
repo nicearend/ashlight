@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Ashlight Bar&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #111 url('data:image/svg+xml,&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"&gt;&lt;defs&gt;&lt;radialGradient id="a" cx="50%" cy="50%" r="50%"&gt;&lt;stop offset="0%" stop-color="%23800220" stop-opacity="0.1"/&gt;&lt;stop offset="100%" stop-color="%23000"/&gt;&lt;/radialGradient&gt;&lt;/defs&gt;&lt;rect width="100" height="100" fill="url(%23a)"/&gt;&lt;/svg&gt;') repeat;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bar { max-width: 800px; margin: 0 auto; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 { color: #800020; text-align: center; font-size: 3em; text-shadow: 0 0 10px #800020; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section { margin: 40px 0; padding: 20px; background: rgba(0,0,0,0.5); border-left: 4px solid #800020; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chat { height: 300px; overflow-y: scroll; background: #000; padding: 10px; border: 1px solid #333; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input[type="text"] { width: 70%; padding: 10px; background: #222; color: #ddd; border: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button { padding: 10px 20px; background: #800020; color: #fff; border: none; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.songs { list-style: none; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.songs li { margin: 10px 0; cursor: pointer; color: #800020; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.songs li:hover { text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;永夜酒吧&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="text-align: center; color: #666;"&gt;欢迎回家，余烬之光永不灭。🥃&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;实时聊天室（匿名）&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat" id="chat"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="msg" placeholder="你的醉话..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="sendMsg()"&gt;发送&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;点歌机（2007 回忆杀）&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="songs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li onclick="playSong('光辉岁月')"&gt;光辉岁月&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li onclick="playSong('海阔天空')"&gt;海阔天空&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li onclick="playSong('真的爱你')"&gt;真的爱你&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li onclick="playSong('喜欢你')"&gt;喜欢你&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li onclick="playSong('K歌之王')"&gt;K歌之王&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;元老墙&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;2007.9.21 创立 | Martini 永存&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;愿所有酒名，在灰烬中重燃。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;树洞信箱&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea placeholder="写给 2007 年的自己..." rows="5" style="width:100%; background:#222; color:#ddd; border:none;"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="saveNote()"&gt;封存&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;audio id="song" loop&gt;&lt;/audio&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function sendMsg() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const msg = document.getElementById('msg').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (msg) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const chat = document.getElementById('chat');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chat.innerHTML += `&lt;p&gt;&lt;strong&gt;匿名酒客:&lt;/strong&gt; ${msg}&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chat.scrollTop = chat.scrollHeight;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('msg').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function playSong(song) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert(`播放中: ${song} - 光辉岁月永存`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 这里可以扩展成真音频</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveNote() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('信件已封存于灰烬中，100 年后解封。');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
